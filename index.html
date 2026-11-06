@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Murmur: free, private dictation for your Mac</title>
+<meta name="description" content="Double-tap fn, talk, and your words appear wherever you're typing. Nothing you say leaves your Mac.">
+<meta name="robots" content="noindex">
+<meta property="og:title" content="Murmur. Talk. It types.">
+<meta property="og:description" content="Free, private dictation for your Mac.">
+<meta property="og:image" content="https://jrtutor.github.io/murmur/assets/og.jpg">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav class="nav"><div class="frame nav-in">
+  <a href="#top"><img src="assets/murmur-wordmark-on-dark.svg" alt="Murmur" width="118"></a>
+  <div class="nav-links"><a href="#demo">See it</a><a href="#inside">Inside</a><a href="#setup">Setup</a></div>
+  <a class="button button-sm" href="https://github.com/jrtutor/murmur/releases/download/v1.1.1/Murmur-1.1.1.dmg">Download for Mac</a>
+</div></nav>
+
+<div class="frame lines" id="top">
+<header class="hero panel">
+  <figure class="promo">
+    <video id="promo" src="assets/murmur-promo.mp4" poster="assets/promo-poster.jpg" muted loop playsinline preload="metadata" aria-label="30-second Murmur promo video"></video>
+    <button class="sound" id="sound" type="button">Play with sound</button>
+  </figure>
+  <svg class="ghost" viewBox="150 300 780 430" aria-hidden="true"><path d="M190 672 C190 245, 340 245, 340 672 C340 299, 490 299, 490 672 C490 379, 640 379, 640 672 C640 459, 790 459, 790 672"/><circle cx="868" cy="672" r="34"/></svg>
+  <h1 class="display"><span>Talk.</span><span class="inline-pill" aria-hidden="true"><span class="hb"><i style="--h:10px;--d:0ms"></i><i style="--h:20px;--d:120ms"></i><i style="--h:32px;--d:240ms"></i><i style="--h:40px;--d:60ms"></i><i style="--h:28px;--d:300ms"></i><i style="--h:16px;--d:180ms"></i><i style="--h:24px;--d:360ms"></i><i style="--h:36px;--d:90ms"></i><i style="--h:40px;--d:270ms"></i><i style="--h:26px;--d:150ms"></i><i style="--h:14px;--d:330ms"></i><i style="--h:30px;--d:30ms"></i><i style="--h:38px;--d:210ms"></i><i style="--h:22px;--d:390ms"></i></span><span class="rec" id="heroRec"></span></span><span>It types<span class="dot">.</span></span></h1>
+  <p class="lede">Double-tap fn, talk, and your words appear wherever you're typing. Nothing you say leaves your Mac.</p>
+  <a class="button" href="https://github.com/jrtutor/murmur/releases/download/v1.1.1/Murmur-1.1.1.dmg">Download for Mac</a>
+  <p class="fine">Free. For Macs with an M1 or newer and macOS 14 or later.</p>
+  <p class="fine follow" id="follow">Follow the red dot, or click it to jump ahead.</p>
+</header>
+<div class="apps"><span>Works anywhere you can type</span><ul><li>Slack</li><li>Notion</li><li>Claude</li><li>Chrome</li><li>Safari</li><li>Arc</li><li>Firefox</li><li>Google Docs</li></ul></div>
+
+<section class="sec" id="demo" aria-labelledby="demo-title">
+  <h2 class="heading" id="demo-title">Say it messy.<br><span class="soft">It lands clean<span class="dot">.</span></span></h2>
+  <div class="flow">
+    <div class="card said"><span class="tag">You said</span><p id="saidText">um so uh the meeting is Tuesday no wait Wednesday</p></div>
+    <div class="link"><img src="assets/murmur-tile-macos.svg" alt="" width="124"></div>
+    <div class="card typed" role="status" aria-live="polite"><span class="tag">Murmur typed</span><p id="typed">The meeting is Wednesday.</p></div>
+  </div>
+  <div class="try">
+    <button class="key key-big" id="fn" type="button" aria-describedby="hint">fn</button>
+    <p class="hint" id="hint">Double-tap fn to try it.</p>
+    <div class="pill" id="pill" hidden><span class="bars" id="bars" aria-hidden="true"></span><span class="rec" aria-hidden="true"></span><span class="pill-word" id="pillWord" hidden>Cleaning up</span></div>
+  </div>
+</section>
+
+<section class="sec" id="inside" aria-labelledby="inside-title">
+  <h2 class="heading" id="inside-title">Small on purpose.<br><span class="soft">Good at one thing<span class="dot">.</span></span></h2>
+  <div class="bento">
+    <article class="cell wide">
+      <div><h3>Nothing leaves your Mac</h3><p>Speech recognition and cleanup both run locally, so your audio and your words never go to a server. There's no account to make.</p></div>
+      <div class="mac" role="img" aria-label="Your voice goes through speech recognition and cleanup, both on your Mac, and lands at your cursor.">
+        <span class="mac-label">Your Mac</span>
+        <div class="chain"><span>Your voice</span><i></i><span>Speech model</span><i></i><span>Cleanup model</span><i></i><span class="end-chip">Your cursor</span></div>
+      </div>
+    </article>
+    <article class="cell">
+      <div class="keys-row"><kbd class="key">fn</kbd><b aria-hidden="true">+</b><kbd class="key">V</kbd></div>
+      <h3>Wrong spot? fn + V</h3><p>Click where the text should go and press fn + V. Your last dictation lands there, so you don't have to say it again.</p>
+    </article>
+    <article class="cell">
+      <div class="vocab"><div><span>Planning center</span><span class="arrow">becomes</span><span>Planning Center</span></div><div><span>logic pro</span><span class="arrow">becomes</span><span>Logic Pro</span></div><div><span>tupelo</span><span class="arrow">becomes</span><span>Tupelo</span></div></div>
+      <h3>Fix a name once</h3><p>Add your words to Vocabulary, or correct a dictation, and Murmur remembers how you spell them.</p>
+    </article>
+    <article class="cell">
+      <div class="menu" aria-hidden="true"><div>Recent</div><div>AI Cleanup</div><div class="on">Paste Last Dictation <em>fn+V</em></div><div>Fix Last Dictation…</div><div>Vocabulary…</div></div>
+      <h3>No window to manage</h3><p>Murmur lives in your menu bar. A small pill shows while you talk, and then it's gone.</p>
+    </article>
+    <article class="cell">
+      <div class="list-demo" aria-hidden="true"><span>"first the logo second the copy"</span><ul><li>The logo</li><li>The copy</li></ul></div>
+      <h3>It fits what you're writing</h3><p>Spoken lists become real lists. Capitals, spaces and periods match the sentence you're in.</p>
+    </article>
+  </div>
+</section>
+
+<section class="sec" id="how" aria-labelledby="how-title">
+  <h2 class="heading" id="how-title">Two taps.<br><span class="soft">Then talk<span class="dot">.</span></span></h2>
+  <ol class="steps">
+    <li class="cell"><span class="keys"><kbd class="key">fn</kbd><kbd class="key">fn</kbd></span><h3>Double-tap fn</h3><p>A small pill appears at the bottom of your screen.</p></li>
+    <li class="cell"><span class="keys talk" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><h3>Talk</h3><p>For as long as you want, in any app with a cursor.</p></li>
+    <li class="cell"><span class="keys"><kbd class="key">fn</kbd></span><h3>Tap fn</h3><p>Your words land about half a second later on an M2 Max.</p></li>
+  </ol>
+  <p class="aside">Prefer push-to-talk? Hold fn while you talk and let go. Changed your mind? Press Esc and nothing gets typed.</p>
+</section>
+
+<section class="sec split" id="setup" aria-labelledby="setup-title">
+  <div><h2 class="heading" id="setup-title">Set it up<br><span class="soft">in a few minutes<span class="dot">.</span></span></h2>
+  <p class="body">Murmur isn't from the App Store, so macOS asks you to approve it once. That step is normal for this app.</p></div>
+  <ol class="setup">
+    <li><b>Download Murmur</b> and drag it into Applications.</li>
+    <li><b>Open it.</b> macOS will say it can't be opened. Click Done.</li>
+    <li><b>Approve it.</b> Go to System Settings, then Privacy &amp; Security, scroll down and click Open Anyway.</li>
+    <li><b>Follow the welcome window.</b> It walks you through microphone and Accessibility access, the 🌐 key setting, and a one-time speech model download of about 4 GB.</li>
+  </ol>
+</section>
+
+<section class="sec split" id="faq" aria-labelledby="faq-title">
+  <h2 class="heading" id="faq-title">Questions<span class="dot">.</span></h2>
+  <div class="faq">
+  <details><summary>How much is it?</summary><p>It's free. There's no subscription and no account, and there are no servers to pay for.</p></details>
+  <details><summary>Which Macs does it run on?</summary><p>A Mac with Apple Silicon (M1 or newer) and macOS 14 or later, with about 5 GB of free space. 16 GB of memory is best. With 8 GB, turn AI Cleanup off.</p></details>
+  <details><summary>When does it use the internet?</summary><p>For two things: downloading its speech models the first time you open it, and checking for signed updates.</p></details>
+  <details><summary>I already use another dictation app.</summary><p>If it listens to fn too, quit it first so they don't both start.</p></details>
+  <details><summary>What languages does it support?</summary><p>English.</p></details>
+  <details><summary>Something isn't working.</summary><p>Tell whoever sent you this page.</p></details>
+  </div>
+</section>
+
+<section class="closer panel" aria-labelledby="end-title">
+  <svg class="ghost" viewBox="150 300 780 430" aria-hidden="true"><path d="M190 672 C190 245, 340 245, 340 672 C340 299, 490 299, 490 672 C490 379, 640 379, 640 672 C640 459, 790 459, 790 672"/><circle cx="868" cy="672" r="34"/></svg>
+  <h2 class="heading" id="end-title">Free, and made for friends<span class="dot">.</span></h2>
+  <a class="button" href="https://github.com/jrtutor/murmur/releases/download/v1.1.1/Murmur-1.1.1.dmg">Download for Mac</a>
+  <p class="fine">13 MB download. Murmur updates itself after this.</p>
+</section>
+</div>
+<button id="ball" type="button" aria-label="Go to the next section" hidden></button>
+<script src="demo.js"></script>
+<script src="dot.js"></script>
+</body>
+</html>
