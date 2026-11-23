@@ -1,7 +1,7 @@
 # Murmur
 
 Free dictation for your Mac. Double-tap **fn**, talk, and your words appear wherever you're typing.
-Everything runs on your Mac: nothing you say is sent anywhere.
+Dictation runs on your Mac: nothing you say is sent anywhere, unless you circle something to ask Claude (optional, needs the Claude app).
 
 ## Download
 
